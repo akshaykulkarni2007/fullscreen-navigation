@@ -1,0 +1,111 @@
+body {
+  height: 100%;
+  background: #484848;
+  overflow-y: hidden;
+}
+a:hover, a:active {
+  text-decoration: none;
+}
+.navbar-right a {
+  font-size: 30px;
+}
+.nav-menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: none;
+  animation-name: bounceOutDown;
+}
+.navbar>.container-fluid .navbar-brand {
+  line-height: 30px;
+  color: rgba(255, 255, 255, .8);
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: rgba(255, 255, 255, .8);
+}
+.nav-menu.nav-menu-active {
+  animation-name: bounceInUp;
+}
+.nav-menu a.dismiss-nav {
+  font-size: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: rgba(255, 255, 255, .8);
+}
+.nav-menu a.dismiss-nav:hover {
+  color: #fff;
+}
+.nav-menu .nav-menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+.nav-menu .nav-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav-menu .nav-title {
+  text-transform: uppercase;
+  color: #fff;
+}
+.nav-menu .nav-menu-list .nav-menu-list-item {
+  font-size: 25px;
+  padding: .3em 0;
+}
+.nav-menu .nav-menu-list .nav-menu-list-item a {
+  color: #fff;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceOutDown {
+  20% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  40%, 45% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 2000px, 0);
+  }
+}
